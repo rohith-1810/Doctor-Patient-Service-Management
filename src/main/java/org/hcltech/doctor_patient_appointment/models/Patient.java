@@ -4,13 +4,10 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hcltech.doctor_patient_appointment.enums.Gender;
 
-import java.util.List;
-
 @Entity
 @Getter
 @Setter
 @ToString(callSuper = true)
-@MappedSuperclass
 @NoArgsConstructor
 @AllArgsConstructor
 public class Patient extends BaseModel {

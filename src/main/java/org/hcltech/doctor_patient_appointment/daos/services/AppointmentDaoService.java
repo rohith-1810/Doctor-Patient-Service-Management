@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class AppointmentDaoService {
 
-    private final AppointmentRepository appointmentRepository;
+    // private final AppointmentRepository appointmentRepository;
 
-    public AppointmentDaoService(AppointmentRepository appointmentRepository) {
-        this.appointmentRepository = appointmentRepository;
-    }
+    // public AppointmentDaoService(AppointmentRepository appointmentRepository) {
+    //     this.appointmentRepository = appointmentRepository;
+    // }
 }
