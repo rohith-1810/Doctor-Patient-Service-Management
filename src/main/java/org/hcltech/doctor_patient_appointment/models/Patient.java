@@ -31,29 +31,5 @@ public class Patient {
     @Column(name="patient_password")
     private String password;
 
-    /*
-    @Column(nullable = false)
-    private String firstName;
 
-    @Column(nullable = false)
-    private String lastName;
-
-    @Column(nullable = false)
-    private Integer age;
-
-    @Column(nullable = false)
-    private Gender gender;
-
-    @Column(nullable = false)
-    private String phoneNumber;
-
-    @ManyToOne
-    @JoinColumn(name = "fk_appointment_doctor", referencedColumnName = "id")
-    private Doctor doctor;
-
-//    private List<Appointment> appointments;
-
-//    private List<Prescription> prescriptions;
-
-     */
 }
