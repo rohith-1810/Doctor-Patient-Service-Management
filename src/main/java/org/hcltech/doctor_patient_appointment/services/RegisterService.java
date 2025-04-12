@@ -1,33 +1,32 @@
 package org.hcltech.doctor_patient_appointment.services;
 
-import org.hcltech.doctor_patient_appointment.daos.services.PatientDAOService;
+import org.hcltech.doctor_patient_appointment.daos.services.RegisterDAOService;
 import org.hcltech.doctor_patient_appointment.dtos.PatientDTO;
 import org.hcltech.doctor_patient_appointment.models.Patient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class PatientService {
-
-    private final PatientDAOService patientDaoService;
-    public PatientService(PatientDAOService patientDaoService) {
-        this.patientDaoService = patientDaoService;
+public class RegisterService {
+    private RegisterDAOService registerDAOService;
+    public RegisterService(RegisterDAOService registerDAOService){
+        this.registerDAOService=registerDAOService;
     }
 
-    public List<PatientDTO> getAllPatients() {
-        List<Patient> response = patientDaoService.getAllPatients();
-        return toDTO(response);
+    public PatientDTO fetchUserByEmail(String currEmail) {
+        Patient patient = registerDAOService.fetchUserByEmail(currEmail);
+        if (patient != null) {
+            return toDTO(patient);
+        }
+        return null;
     }
 
-    public PatientDTO updatePatientProfile(PatientDTO patientDTO) {
+    public PatientDTO savePatient(PatientDTO patientDTO) {
         Patient patient = toEntity(patientDTO);
-        Patient result = patientDaoService.updatePatientProfile(patient);
-        return toDTO(result);
-    }
-
-    public void deletePatient(Long id) {
-        patientDaoService.deletePatient(id);
+        Patient response = registerDAOService.savePatient(patient);
+        return toDTO(response);
     }
 
     public static PatientDTO toDTO(Patient patient){

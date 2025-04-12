@@ -9,11 +9,27 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@ToString(callSuper = true)
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Doctor extends BaseModel {
+@Table(name="doctor")
+public class Doctor {
 
+    @Id
+    private Long id;
+    private String email;
+    private String doctorname;
+    private String mobile;
+    private String gender;
+    private String experience;
+    private String specialization;
+    private String previoushospital;
+    private String address;
+    private String password;
+    private String status;
+
+
+    /*
     @Column(nullable = false)
     private String name;
 
@@ -27,4 +43,6 @@ public class Doctor extends BaseModel {
     private List<Patient> patients;
 
 //    private List<Appointment> appointments;
+
+     */
 }

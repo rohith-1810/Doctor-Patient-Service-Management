@@ -16,8 +16,22 @@ import java.util.List;
 @AllArgsConstructor
 public class DoctorDto {
     private Long id;
+    private String email;
+    private String doctorname;
+    private String mobile;
+    private String gender;
+    private String experience;
+    private String specialization;
+    private String previoushospital;
+    private String address;
+    private String password;
+    private String status;
+    /*
+    private Long id;
     private String name;
     private String specialization;
     private Gender gender;
     private List<Patient> patients;
+
+     */
 }
